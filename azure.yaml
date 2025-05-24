@@ -1,0 +1,14 @@
+# プロジェクト設定
+name: fastapi-echo-sample-sakamoto-hiroya
+
+# ── インフラ定義 ─────────────────────────────
+infra:
+  path: .          # main.bicep が置いてあるフォルダ
+  module: main     # 「main.bicep」を読み込む
+
+# ── サービス定義 ────────────────────────────
+services:
+  api:             # ← Bicep 側のタグ 'azd-service-name': 'api' と一致させる
+    project: .     # ソースコードの場所
+    language: py   # または python
+    host: appservice
